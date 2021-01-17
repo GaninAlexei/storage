@@ -7,113 +7,132 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textView"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toTopOf="@id/constr"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <LinearLayout
-        android:id="@+id/constr"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/editTextNote"
+        app:layout_constraintBottom_toTopOf="@id/saveToPrefs"
+        tools:text="TextView" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/saveToPrefs"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save_to_prefs"
+        app:layout_constraintBaseline_toBaselineOf="@+id/loadFromPrefs"
+        app:layout_constraintEnd_toStartOf="@+id/loadFromPrefs"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/saveToPrefs"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="save to prefs"
-                 />
+    <Button
+        android:id="@+id/saveInternal"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save_internal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/loadInternal"
+        app:layout_constraintEnd_toStartOf="@+id/loadInternal"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/saveInternal"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="save internal"
-                 />
+    <Button
+        android:id="@+id/saveExternal"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save_external"
+        app:layout_constraintBaseline_toBaselineOf="@+id/loadExternal"
+        app:layout_constraintEnd_toStartOf="@+id/loadExternal"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/saveExternal"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="save external"
-                 />
+    <Button
+        android:id="@+id/saveToBD"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save_to_bd"
+        app:layout_constraintBaseline_toBaselineOf="@+id/loadFromBD"
+        app:layout_constraintEnd_toStartOf="@+id/loadFromBD"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/saveToBD"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="save to BD"
-                 />
+    <Button
+        android:id="@+id/loadFromPrefs"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/load_from_prefs"
+        app:layout_constraintBottom_toTopOf="@+id/loadInternal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/saveToPrefs"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/loadInternal"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/load_internal"
+        app:layout_constraintBottom_toTopOf="@+id/loadExternal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/saveInternal"
+        app:layout_constraintTop_toBottomOf="@+id/loadFromPrefs" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_margin="16dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/loadExternal"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/load_external"
+        app:layout_constraintBottom_toTopOf="@+id/loadFromBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/saveExternal"
+        app:layout_constraintTop_toBottomOf="@+id/loadInternal" />
 
-            <Button
-                android:id="@+id/loadFromPrefs"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="load from prefs"/>
-
-            <Button
-                android:id="@+id/loadInternal"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="load internal"/>
-
-            <Button
-                android:id="@+id/loadExternal"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="load external" />
-
-            <Button
-                android:id="@+id/loadFromBD"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="load from BD" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
+    <Button
+        android:id="@+id/loadFromBD"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/load_from_bd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/saveToBD"
+        app:layout_constraintTop_toBottomOf="@+id/loadExternal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

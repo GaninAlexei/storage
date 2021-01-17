@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">StorageVersion2</string>
+    <string name="save_to_prefs">save to prefs</string>
+    <string name="save_internal">save internal</string>
+    <string name="save_external">save external</string>
+    <string name="save_to_bd">save to BD</string>
+    <string name="load_from_prefs">load from prefs</string>
+    <string name="load_internal">load internal</string>
+    <string name="load_external">load external</string>
+    <string name="load_from_bd">load from BD</string>
 </resources>

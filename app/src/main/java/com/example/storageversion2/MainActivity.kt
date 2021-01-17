@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         //save to preferences
         binding.saveToPrefs.setOnClickListener {
-            val text = binding.editTextTextPersonName.editableText.toString()
+            val text = binding.editTextNote.editableText.toString()
             prefs.edit().apply {
                 putString(PREFS_KEY, text)
                 apply()
-                binding.editTextTextPersonName.editableText.clear()
+                binding.editTextNote.editableText.clear()
             }
         }
 
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         //save to internal storage
         binding.saveInternal.setOnClickListener {
-            val text = binding.editTextTextPersonName.editableText.toString()
+            val text = binding.editTextNote.editableText.toString()
             internalStorage.write(text)
-            binding.editTextTextPersonName.editableText.clear()
+            binding.editTextNote.editableText.clear()
         }
 
         //load from internal storage
@@ -62,9 +62,9 @@ class MainActivity : AppCompatActivity() {
         //save to external storage
         binding.saveExternal.setOnClickListener {
             //askPermission()
-            val text = binding.editTextTextPersonName.editableText.toString()
+            val text = binding.editTextNote.editableText.toString()
             externalStorage.write(text)
-            binding.editTextTextPersonName.editableText.clear()
+            binding.editTextNote.editableText.clear()
         }
 
         //load from external storage
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
 
         // save to dataBase
         binding.saveToBD.setOnClickListener {
-            val text = binding.editTextTextPersonName.editableText.toString()
+            val text = binding.editTextNote.editableText.toString()
             db.getNotesDao().insertNote(Note(name = text))
-            binding.editTextTextPersonName.editableText.clear()
+            binding.editTextNote.editableText.clear()
         }
 
         //load from dataBase
